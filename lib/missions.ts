@@ -16,12 +16,13 @@ export interface Mission {
 }
 
 export const STORY_PARTS = {
-  team: "The Neon Runner game was developed by a team of 5 talented developers: Vivi, Carlos, Pierre, Diego, and Alfredo. They worked together for months, building the game from scratch.",
-  culprit: "After investigating the git history, a pattern emerges. All the breaking commits trace back to one developer: Alfredo. He's the one who introduced the bugs.",
+  team: "The Neon Runner game was developed by a team of 5 talented developers: Vivi, Carlos, Pierre, Diego, and one mysterious contributor. They worked together for months, building the game from scratch.",
+  culprit: "After investigating the git history, a pattern emerges. All the breaking commits trace back to one developer. But who is this saboteur?",
   sabotage: "The bugs weren't accidents - they were deliberate. Someone sabotaged the coin rendering, enemy speeds, scoring system, and more. Each change broke something critical.",
-  evidence: "By examining the commits in detail, you can see Alfredo's sabotage strategy: subtle changes to game mechanics that looked innocent but completely broke gameplay.",
+  evidence: "By examining the commits in detail, you can see the saboteur's strategy: subtle changes to game mechanics that looked innocent but completely broke gameplay. But their identity remains hidden.",
+  secretMessage: "A secret message was hidden in the repository - in the most unexpected place. Finding it reveals the culprit's real name: Alfredo. The clues were there all along, hidden in plain sight.",
   tension: "Why would Alfredo do this? Looking at the commit timeline and team communications, it becomes clear: he felt overlooked and undervalued by the team despite his contributions.",
-  resolution: "Through Git investigation, you've uncovered the whole story. By reverting his sabotage commits, the game is fixed. The team now understands what happened and can address the real issue - making everyone feel valued."
+  resolution: "Through Git investigation, you've uncovered the whole story. By reverting his sabotage commits and discovering his hidden message, the game is fixed. The team now understands what happened and can address the real issue - making everyone feel valued."
 };
 
 export const MISSIONS: Mission[] = [
@@ -34,7 +35,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Beginner',
     badge: 'SETUP',
-    whatYouLearn: 'WHAT: git clone downloads a complete copy of a repository to your computer. WHY: This is how you start working on any existing project - you need the code locally to view, edit, and run it.',
+    whatYouLearn: 'WHAT: git clone downloads a complete copy of a repository to your computer.\n\nWHY: This is how you start working on any existing project - you need the code locally to view, edit, and run it.',
     steps: [
       'Clone: git clone https://github.com/diegoperezgandarillas/Neon-Runner-Artifact-Heist.git',
       'Navigate: cd Neon-Runner-Artifact-Heist',
@@ -55,7 +56,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Beginner',
     badge: 'BRANCH',
-    whatYouLearn: 'WHAT: Branches let you work on features separately from the main code. WHY: Essential for team collaboration - everyone works on their own branch without breaking main. Like having your own workspace.',
+    whatYouLearn: 'WHAT: Branches let you work on features separately from the main code.\n\nWHY: Essential for team collaboration - everyone works on their own branch without breaking main. Like having your own workspace.',
     steps: [
       'Create branch: git checkout -b <your-name>',
       'Or: git branch <your-name> then git checkout <your-name>',
@@ -76,7 +77,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Beginner',
     badge: 'INFO',
-    whatYouLearn: 'WHAT: git status shows what files changed, what\'s staged, and what branch you\'re on. WHY: Your "where am I?" command - always know what you\'ve changed before committing.',
+    whatYouLearn: 'WHAT: git status shows what files changed, what\'s staged, and what branch you\'re on.\n\nWHY: Your "where am I?" command - always know what you\'ve changed before committing.',
     steps: [
       'Check status: git status',
       'Make a small change to README.md',
@@ -96,7 +97,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Beginner',
     badge: 'STAGE',
-    whatYouLearn: 'WHAT: Staging (git add) prepares changes, commit saves them to history. WHY: Lets you organize changes into logical snapshots. Like packing boxes before moving - stage what belongs together.',
+    whatYouLearn: 'WHAT: Staging (git add) prepares changes, commit saves them to history.\n\nWHY: Lets you organize changes into logical snapshots. Like packing boxes before moving - stage what belongs together.',
     steps: [
       'Modify a file or create new one',
       'Stage it: git add <filename>',
@@ -117,7 +118,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Beginner',
     badge: 'HIST',
-    whatYouLearn: 'WHAT: git log shows commit history with authors, dates, and messages. WHY: Understand how code evolved, find who made changes, and track down when bugs were introduced.',
+    whatYouLearn: 'WHAT: git log shows commit history with authors, dates, and messages.\n\nWHY: Understand how code evolved, find who made changes, and track down when bugs were introduced.',
     steps: [
       'File history: git log -- main.py',
       'With changes: git log -p -- main.py',
@@ -137,7 +138,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Beginner',
     badge: 'INIT',
-    whatYouLearn: 'WHAT: git init creates a new repository, git remote connects it to GitHub/etc. WHY: Start tracking any project with version control. Remotes let you backup and share your work.',
+    whatYouLearn: 'WHAT: git init creates a new repository, git remote connects it to GitHub/etc.\n\nWHY: Start tracking any project with version control. Remotes let you backup and share your work.',
     steps: [
       'Create folder: mkdir my-test-repo && cd my-test-repo',
       'Initialize: git init',
@@ -159,7 +160,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Intermediate',
     badge: 'MERGE',
-    whatYouLearn: 'WHAT: git merge combines changes from one branch into another. WHY: Safely integrate your feature work back into main. If experiments fail, main is untouched.',
+    whatYouLearn: 'WHAT: git merge combines changes from one branch into another.\n\nWHY: Safely integrate your feature work back into main. If experiments fail, main is untouched.',
     steps: [
       'Create experiment branch: git checkout -b my-experiment',
       'Change PLAYER_CHAR in game/constants.py to something fun',
@@ -179,7 +180,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Intermediate',
     badge: 'REBASE',
-    whatYouLearn: 'WHAT: git rebase moves your commits to start after another branch\'s commits. WHY: Creates cleaner, linear history. Makes code reviews easier and git log more readable.',
+    whatYouLearn: 'WHAT: git rebase moves your commits to start after another branch\'s commits.\n\nWHY: Creates cleaner, linear history. Makes code reviews easier and git log more readable.',
     steps: [
       'Create branch: git checkout -b feature-additions',
       'Make 2 small changes to the game (colors, speeds, etc)',
@@ -200,7 +201,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Intermediate',
     badge: 'REFS',
-    whatYouLearn: 'WHAT: HEAD~1 means "1 commit before current", HEAD~2 means "2 commits before". WHY: Quick navigation through history without memorizing commit hashes. Essential for debugging.',
+    whatYouLearn: 'WHAT: HEAD~1 means "1 commit before current", HEAD~2 means "2 commits before".\n\nWHY: Quick navigation through history without memorizing commit hashes. Essential for debugging.',
     steps: [
       'Make 3 quick commits: change PLAYER_CHAR to X, then O, then @',
       'Check history: git log --oneline (see your 3 commits)',
@@ -221,7 +222,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Intermediate',
     badge: 'CHERRY',
-    whatYouLearn: 'WHAT: git cherry-pick copies a specific commit from anywhere to your current branch. WHY: Grab that one bug fix or feature without merging everything. Surgical precision for commits.',
+    whatYouLearn: 'WHAT: git cherry-pick copies a specific commit from anywhere to your current branch.\n\nWHY: Grab that one bug fix or feature without merging everything. Surgical precision for commits.',
     steps: [
       'Branch A: git checkout -b speed-test, change SPEED=5, commit',
       'Branch B: git checkout -b color-test, change BG_COLOR=blue, commit',
@@ -241,7 +242,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Advanced',
     badge: 'INTERACTIVE',
-    whatYouLearn: 'WHAT: git rebase -i lets you reorder, edit, squash, or reword commits interactively. WHY: Turn messy work-in-progress commits into clean, professional history before sharing.',
+    whatYouLearn: 'WHAT: git rebase -i lets you reorder, edit, squash, or reword commits interactively.\n\nWHY: Turn messy work-in-progress commits into clean, professional history before sharing.',
     steps: [
       'Make 3 commits: "fix", "oops", "actually fix" (change SPEED each time)',
       'Messy history! Clean it: git rebase -i HEAD~3',
@@ -261,7 +262,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Advanced',
     badge: 'FORCE',
-    whatYouLearn: 'WHAT: git branch -f and git reset move branch pointers to different commits. WHY: Undo mistakes by rewinding history. Powerful but use carefully - changes history!',
+    whatYouLearn: 'WHAT: git branch -f and git reset move branch pointers to different commits.\n\nWHY: Undo mistakes by rewinding history. Powerful but use carefully - changes history!',
     steps: [
       'Create test branch: git checkout -b experiment',
       'Make 2 "bad" commits (set SPEED=999, then SPEED=0)',
@@ -281,7 +282,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Advanced',
     badge: 'RESET',
-    whatYouLearn: 'WHAT: --soft keeps changes staged, --mixed unstages them, --hard deletes everything. WHY: Different undo levels for different situations. Choose how much you want to erase.',
+    whatYouLearn: 'WHAT: --soft keeps changes staged, --mixed unstages them, --hard deletes everything.\n\nWHY: Different undo levels for different situations. Choose how much you want to erase.',
     steps: [
       'Make commit: change BG_COLOR and commit',
       'Soft undo: git reset --soft HEAD~1 (git status: still staged!)',
@@ -301,7 +302,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Beginner',
     badge: 'TAG',
-    whatYouLearn: 'WHAT: git tag marks important commits with memorable names like v1.0. WHY: Easy reference to releases, stable versions, or important milestones. Better than memorizing commit hashes.',
+    whatYouLearn: 'WHAT: git tag marks important commits with memorable names like v1.0.\n\nWHY: Easy reference to releases, stable versions, or important milestones. Better than memorizing commit hashes.',
     steps: [
       'Make commit with SPEED=3, tag it: git tag v1.0-slow',
       'Make commit with SPEED=5, tag it: git tag v1.1-medium',
@@ -321,7 +322,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Intermediate',
     badge: 'DETACHED',
-    whatYouLearn: 'WHAT: Detached HEAD means you\'re viewing a specific commit, not a branch. WHY: Safely explore old code without changing branches. Make experimental changes without affecting branches.',
+    whatYouLearn: 'WHAT: Detached HEAD means you\'re viewing a specific commit, not a branch.\n\nWHY: Safely explore old code without changing branches. Make experimental changes without affecting branches.',
     steps: [
       'Make 3 commits changing PLAYER_CHAR: first "A", then "B", then "C"',
       'Get commit hash: git log --oneline (copy the "A" commit hash)',
@@ -348,7 +349,7 @@ export const MISSIONS: Mission[] = [
     steps: [
       'Use git log --format="%an" | sort | uniq to list all authors',
       'Count how many commits each person made',
-      'Submit evidence: List all 5 collaborators names'
+      'Submit evidence: List all collaborators names'
     ],
     claimedBy: null,
     claimedAt: null,
@@ -388,7 +389,8 @@ export const MISSIONS: Mission[] = [
       'Use git log --author="<name>" to filter by author',
       'Check each developer\'s commits for file changes',
       'Look for patterns in timing and files modified',
-      'Submit evidence: Name of the developer who made the most suspicious commits'
+      'Note: The commits show a username, but is this their real name?',
+      'Submit evidence: Username found in the suspicious commits'
     ],
     claimedBy: null,
     claimedAt: null,
@@ -396,8 +398,30 @@ export const MISSIONS: Mission[] = [
     storyPart: 'culprit'
   },
   {
-    id: '9',
+    id: '38',
     mission_id: 'detective-4',
+    title: 'The Hidden Message',
+    description: 'Find the secret message hidden in the repository to uncover the culprit\'s real name',
+    category: 'detective',
+    difficulty: 'Hard',
+    badge: 'SECRET',
+    whatYouLearn: 'Exploring repository files and finding hidden content',
+    steps: [
+      'The saboteur left a clue somewhere unexpected',
+      'Check all files in the repo: ls -la',
+      'Look for unusual files - movie scripts don\'t belong in game code!',
+      'Use cat, less, or grep to search file contents',
+      'Find the file with the Shrek script and search for the secret',
+      'Submit evidence: The culprit\'s real name from the hidden message'
+    ],
+    claimedBy: null,
+    claimedAt: null,
+    completedBy: [],
+    storyPart: 'secretMessage'
+  },
+  {
+    id: '9',
+    mission_id: 'detective-5',
     title: 'Fix: Coins Not Visible',
     description: 'Find the commit that broke coin rendering and revert it',
     category: 'detective',
@@ -409,6 +433,7 @@ export const MISSIONS: Mission[] = [
       'Use git show <hash> to inspect each commit',
       'Find the commit that changed coin rendering code',
       'Revert the bad commit: git revert <hash>',
+      'Keep "Revert" in the commit message (default is fine)',
       'Submit evidence: Commit hash'
     ],
     claimedBy: null,
@@ -418,7 +443,7 @@ export const MISSIONS: Mission[] = [
   },
   {
     id: '10',
-    mission_id: 'detective-5',
+    mission_id: 'detective-6',
     title: 'Fix: Enemies Too Fast',
     description: 'Find and revert the commit that made enemies too fast',
     category: 'detective',
@@ -430,6 +455,7 @@ export const MISSIONS: Mission[] = [
       'Use git show <hash> to see what changed',
       'Identify commit that changed speed from 2 to 20',
       'Revert it: git revert <hash>',
+      'Keep "Revert" in the commit message',
       'Submit evidence: Commit hash and author'
     ],
     claimedBy: null,
@@ -439,7 +465,7 @@ export const MISSIONS: Mission[] = [
   },
   {
     id: '11',
-    mission_id: 'detective-6',
+    mission_id: 'detective-7',
     title: 'Fix: Score Goes Down',
     description: 'Find and revert the commit that broke scoring',
     category: 'detective',
@@ -451,6 +477,7 @@ export const MISSIONS: Mission[] = [
       'Look for commits about scoring or add_score',
       'Use git show to find commit that changed += to -=',
       'Revert the bad commit: git revert <hash>',
+      'Keep "Revert" in the commit message',
       'Submit evidence: Commit hash and culprit'
     ],
     claimedBy: null,
@@ -460,7 +487,7 @@ export const MISSIONS: Mission[] = [
   },
   {
     id: '12',
-    mission_id: 'detective-7',
+    mission_id: 'detective-8',
     title: 'Fix: Invincible Player',
     description: 'Find and revert the commit that made player invincible',
     category: 'detective',
@@ -472,6 +499,7 @@ export const MISSIONS: Mission[] = [
       'Use git show <hash> to inspect collision-related changes',
       'Find commit that modified collision detection',
       'Revert it: git revert <hash>',
+      'Keep "Revert" in the commit message',
       'Submit evidence: Commit hash'
     ],
     claimedBy: null,
@@ -481,7 +509,7 @@ export const MISSIONS: Mission[] = [
   },
   {
     id: '13',
-    mission_id: 'detective-8',
+    mission_id: 'detective-9',
     title: 'Fix: Backwards Controls',
     description: 'Find and revert the commit that reversed the controls',
     category: 'detective',
@@ -493,6 +521,7 @@ export const MISSIONS: Mission[] = [
       'Check commits about controls or movement',
       'Find commit that swapped left/right dx values',
       'Revert it: git revert <hash>',
+      'Keep "Revert" in the commit message',
       'Submit evidence: Date and author of commit'
     ],
     claimedBy: null,
@@ -502,7 +531,7 @@ export const MISSIONS: Mission[] = [
   },
   {
     id: '14',
-    mission_id: 'detective-9',
+    mission_id: 'detective-10',
     title: 'The Pattern Emerges',
     description: 'Analyze all the breaking commits - what connects them?',
     category: 'detective',
@@ -510,9 +539,10 @@ export const MISSIONS: Mission[] = [
     badge: 'PATTERN',
     whatYouLearn: 'Connecting the dots in git history',
     steps: [
-      'List all the commit hashes you reverted',
-      'Use git show <hash> on each to see the author and date',
-      'Do they all share the same author?',
+      'List all reverted commits: git log --grep="Revert" --oneline',
+      'Or see your revert history: git log --all --oneline | grep "Revert"',
+      'Use git show <hash> on each original bad commit',
+      'Check the author for each: Do they all share the same author?',
       'Check when these commits were made - same timeframe?',
       'Submit evidence: Summary of the pattern you found'
     ],
@@ -526,17 +556,17 @@ export const MISSIONS: Mission[] = [
   {
     id: '15',
     mission_id: 'unlocked-1',
-    title: 'Collect 10 Coins',
-    description: 'Play the game and collect exactly 10 coins',
+    title: 'Master Coin Collector',
+    description: 'Play the game and collect 67 coins without dying',
     category: 'unlocked',
     difficulty: 'Challenge',
     badge: 'PLAY',
     whatYouLearn: 'Playing a working game!',
     steps: [
       'Make sure all detective missions are fixed',
-      'Play and collect 10 coins',
+      'Play and collect exactly 67 coins',
       'Take a screenshot of your score',
-      'Bonus: Can you get 100 points?'
+      'Bonus: Can you get 150 points?'
     ],
     claimedBy: null,
     claimedAt: null,
@@ -545,17 +575,17 @@ export const MISSIONS: Mission[] = [
   {
     id: '16',
     mission_id: 'unlocked-2',
-    title: 'Survive 30 Seconds',
-    description: 'Stay alive for 30 seconds without dying',
+    title: 'Ultimate Survivor',
+    description: 'Stay alive for 90 seconds without dying',
     category: 'unlocked',
     difficulty: 'Challenge',
     badge: 'SURVIVE',
     whatYouLearn: 'Game balance and survival skills',
     steps: [
       'Fix all bugs first',
-      'Survive for 30 seconds',
+      'Survive for 90 seconds straight',
       'Note your final score',
-      'Bonus: Can you survive 60 seconds?'
+      'Bonus: Can you survive 2 minutes?'
     ],
     claimedBy: null,
     claimedAt: null,

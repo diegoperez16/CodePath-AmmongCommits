@@ -26,6 +26,7 @@ export default function MissionBoard({
   const [unlockedAccess, setUnlockedAccess] = useState(false);
   const [passwordInput, setPasswordInput] = useState('');
   const [showPasswordPrompt, setShowPasswordPrompt] = useState(false);
+  const [showDefaultMissions, setShowDefaultMissions] = useState(true);
 
   const defaultMissions = missions.filter(m => m.category === 'default');
   const detectiveMissions = missions.filter(m => m.category === 'detective');
@@ -121,17 +122,32 @@ export default function MissionBoard({
 
       {/* Default Missions - Required for Everyone */}
       <div style={{ marginBottom: '40px' }}>
-        <h2 style={{ fontSize: '24px', fontWeight: '700', marginBottom: '10px', color: '#fff' }}>
-          Required Missions (Complete These First)
-        </h2>
+        <div 
+          onClick={() => setShowDefaultMissions(!showDefaultMissions)}
+          style={{ 
+            cursor: 'pointer', 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: '10px',
+            marginBottom: '10px'
+          }}
+        >
+          <span style={{ fontSize: '20px', color: '#4db8a8' }}>
+            {showDefaultMissions ? '▼' : '▶'}
+          </span>
+          <h2 style={{ fontSize: '24px', fontWeight: '700', margin: 0, color: '#fff' }}>
+            Required Missions (Complete These First)
+          </h2>
+        </div>
         <p style={{ color: '#a0aec0', marginBottom: '20px', fontSize: '14px' }}>
           Everyone must complete these missions to learn Git basics
         </p>
-        <div className="missions-grid">
-          {defaultMissions.map(mission => (
-            <MissionCard
-              key={mission.id}
-              mission={mission}
+        {showDefaultMissions && (
+          <div className="missions-grid">
+            {defaultMissions.map(mission => (
+              <MissionCard
+                key={mission.id}
+                mission={mission}
               currentUser={user}
               onClaim={onClaimMission}
               onRelease={onReleaseMission}
@@ -139,6 +155,7 @@ export default function MissionBoard({
             />
           ))}
         </div>
+        )}
       </div>
 
       {/* Category Filters for Detective/Unlocked */}

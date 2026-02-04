@@ -81,10 +81,23 @@ export default function MissionCard({
         <>
           {mission.whatYouLearn && (
             <div style={{ marginTop: '15px', padding: '15px', background: 'rgba(77, 184, 168, 0.1)', border: '1px solid #4db8a8', borderRadius: '8px' }}>
-              <strong style={{ display: 'block', marginBottom: '8px', color: '#5dd9c1' }}>What You'll Learn:</strong>
-              <p style={{ color: '#cbd5e0', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
-                {mission.whatYouLearn}
-              </p>
+              <strong style={{ display: 'block', marginBottom: '12px', color: '#5dd9c1', fontSize: '15px' }}>What You'll Learn:</strong>
+              <div style={{ color: '#cbd5e0', fontSize: '14px', lineHeight: '1.8' }}>
+                {mission.whatYouLearn.split('\n\n').map((part, idx) => {
+                  const isWhat = part.startsWith('WHAT:');
+                  const isWhy = part.startsWith('WHY:');
+                  if (isWhat || isWhy) {
+                    const label = isWhat ? 'WHAT:' : 'WHY:';
+                    const content = part.substring(label.length).trim();
+                    return (
+                      <div key={idx} style={{ marginBottom: idx === 0 ? '12px' : '0' }}>
+                        <strong style={{ color: '#5dd9c1' }}>{label}</strong> {content}
+                      </div>
+                    );
+                  }
+                  return <div key={idx}>{part}</div>;
+                })}
+              </div>
             </div>
           )}
           {mission.steps && (
