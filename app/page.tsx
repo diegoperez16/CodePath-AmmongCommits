@@ -84,7 +84,7 @@ export default function Home() {
         // Create new user if doesn't exist
         const { data, error } = await supabase
           .from('users')
-          .insert([{ username }])
+          .insert({ username })
           .select()
           .single();
 
