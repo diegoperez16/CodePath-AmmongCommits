@@ -77,15 +77,27 @@ export default function MissionCard({
         <span>Badge: {mission.badge}</span>
       </div>
 
-      {expanded && mission.steps && (
-        <div style={{ marginTop: '15px', padding: '15px', background: 'rgba(0,0,0,0.3)', borderRadius: '8px' }}>
-          <strong style={{ display: 'block', marginBottom: '8px', color: '#cbd5e0' }}>Steps:</strong>
-          <ul style={{ paddingLeft: '20px', color: '#a0aec0', fontSize: '13px', lineHeight: '1.8' }}>
-            {mission.steps.map((step, idx) => (
-              <li key={idx}>{step}</li>
-            ))}
-          </ul>
-        </div>
+      {expanded && (
+        <>
+          {mission.whatYouLearn && (
+            <div style={{ marginTop: '15px', padding: '15px', background: 'rgba(77, 184, 168, 0.1)', border: '1px solid #4db8a8', borderRadius: '8px' }}>
+              <strong style={{ display: 'block', marginBottom: '8px', color: '#5dd9c1' }}>What You'll Learn:</strong>
+              <p style={{ color: '#cbd5e0', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
+                {mission.whatYouLearn}
+              </p>
+            </div>
+          )}
+          {mission.steps && (
+            <div style={{ marginTop: '15px', padding: '15px', background: 'rgba(0,0,0,0.3)', borderRadius: '8px' }}>
+              <strong style={{ display: 'block', marginBottom: '8px', color: '#cbd5e0' }}>Steps:</strong>
+              <ul style={{ paddingLeft: '20px', color: '#a0aec0', fontSize: '13px', lineHeight: '1.8' }}>
+                {mission.steps.map((step, idx) => (
+                  <li key={idx}>{step}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </>
       )}
 
       {/* Evidence Input for Detective Missions */}
