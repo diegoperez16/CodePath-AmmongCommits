@@ -34,7 +34,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Beginner',
     badge: 'SETUP',
-    whatYouLearn: 'Clone a repo, run Python code',
+    whatYouLearn: 'WHAT: git clone downloads a complete copy of a repository to your computer. WHY: This is how you start working on any existing project - you need the code locally to view, edit, and run it.',
     steps: [
       'Clone: git clone https://github.com/diegoperezgandarillas/Neon-Runner-Artifact-Heist.git',
       'Navigate: cd Neon-Runner-Artifact-Heist',
@@ -55,7 +55,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Beginner',
     badge: 'BRANCH',
-    whatYouLearn: 'Git branching workflow',
+    whatYouLearn: 'WHAT: Branches let you work on features separately from the main code. WHY: Essential for team collaboration - everyone works on their own branch without breaking main. Like having your own workspace.',
     steps: [
       'Create branch: git checkout -b <your-name>',
       'Or: git branch <your-name> then git checkout <your-name>',
@@ -76,7 +76,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Beginner',
     badge: 'INFO',
-    whatYouLearn: 'Using git status to track changes',
+    whatYouLearn: 'WHAT: git status shows what files changed, what\'s staged, and what branch you\'re on. WHY: Your "where am I?" command - always know what you\'ve changed before committing.',
     steps: [
       'Check status: git status',
       'Make a small change to README.md',
@@ -96,7 +96,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Beginner',
     badge: 'STAGE',
-    whatYouLearn: 'Git staging area workflow',
+    whatYouLearn: 'WHAT: Staging (git add) prepares changes, commit saves them to history. WHY: Lets you organize changes into logical snapshots. Like packing boxes before moving - stage what belongs together.',
     steps: [
       'Modify a file or create new one',
       'Stage it: git add <filename>',
@@ -117,7 +117,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Beginner',
     badge: 'HIST',
-    whatYouLearn: 'Using git log for files',
+    whatYouLearn: 'WHAT: git log shows commit history with authors, dates, and messages. WHY: Understand how code evolved, find who made changes, and track down when bugs were introduced.',
     steps: [
       'File history: git log -- main.py',
       'With changes: git log -p -- main.py',
@@ -137,7 +137,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Beginner',
     badge: 'INIT',
-    whatYouLearn: 'Repository initialization and remotes',
+    whatYouLearn: 'WHAT: git init creates a new repository, git remote connects it to GitHub/etc. WHY: Start tracking any project with version control. Remotes let you backup and share your work.',
     steps: [
       'Create folder: mkdir my-test-repo && cd my-test-repo',
       'Initialize: git init',
@@ -159,7 +159,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Intermediate',
     badge: 'MERGE',
-    whatYouLearn: 'Safe experimentation with branches',
+    whatYouLearn: 'WHAT: git merge combines changes from one branch into another. WHY: Safely integrate your feature work back into main. If experiments fail, main is untouched.',
     steps: [
       'Create experiment branch: git checkout -b my-experiment',
       'Change PLAYER_CHAR in game/constants.py to something fun',
@@ -179,7 +179,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Intermediate',
     badge: 'REBASE',
-    whatYouLearn: 'Organizing commits with rebase',
+    whatYouLearn: 'WHAT: git rebase moves your commits to start after another branch\'s commits. WHY: Creates cleaner, linear history. Makes code reviews easier and git log more readable.',
     steps: [
       'Create branch: git checkout -b feature-additions',
       'Make 2 small changes to the game (colors, speeds, etc)',
@@ -200,7 +200,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Intermediate',
     badge: 'REFS',
-    whatYouLearn: 'Navigating history with HEAD~',
+    whatYouLearn: 'WHAT: HEAD~1 means "1 commit before current", HEAD~2 means "2 commits before". WHY: Quick navigation through history without memorizing commit hashes. Essential for debugging.',
     steps: [
       'Make 3 quick commits: change PLAYER_CHAR to X, then O, then @',
       'Check history: git log --oneline (see your 3 commits)',
@@ -221,7 +221,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Intermediate',
     badge: 'CHERRY',
-    whatYouLearn: 'Cherry-picking specific changes',
+    whatYouLearn: 'WHAT: git cherry-pick copies a specific commit from anywhere to your current branch. WHY: Grab that one bug fix or feature without merging everything. Surgical precision for commits.',
     steps: [
       'Branch A: git checkout -b speed-test, change SPEED=5, commit',
       'Branch B: git checkout -b color-test, change BG_COLOR=blue, commit',
@@ -241,7 +241,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Advanced',
     badge: 'INTERACTIVE',
-    whatYouLearn: 'Interactive rebase for commit cleanup',
+    whatYouLearn: 'WHAT: git rebase -i lets you reorder, edit, squash, or reword commits interactively. WHY: Turn messy work-in-progress commits into clean, professional history before sharing.',
     steps: [
       'Make 3 commits: "fix", "oops", "actually fix" (change SPEED each time)',
       'Messy history! Clean it: git rebase -i HEAD~3',
@@ -261,7 +261,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Advanced',
     badge: 'FORCE',
-    whatYouLearn: 'Moving branches and undoing changes',
+    whatYouLearn: 'WHAT: git branch -f and git reset move branch pointers to different commits. WHY: Undo mistakes by rewinding history. Powerful but use carefully - changes history!',
     steps: [
       'Create test branch: git checkout -b experiment',
       'Make 2 "bad" commits (set SPEED=999, then SPEED=0)',
@@ -281,7 +281,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Advanced',
     badge: 'RESET',
-    whatYouLearn: 'Understanding reset options',
+    whatYouLearn: 'WHAT: --soft keeps changes staged, --mixed unstages them, --hard deletes everything. WHY: Different undo levels for different situations. Choose how much you want to erase.',
     steps: [
       'Make commit: change BG_COLOR and commit',
       'Soft undo: git reset --soft HEAD~1 (git status: still staged!)',
@@ -301,7 +301,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Beginner',
     badge: 'TAG',
-    whatYouLearn: 'Creating version tags',
+    whatYouLearn: 'WHAT: git tag marks important commits with memorable names like v1.0. WHY: Easy reference to releases, stable versions, or important milestones. Better than memorizing commit hashes.',
     steps: [
       'Make commit with SPEED=3, tag it: git tag v1.0-slow',
       'Make commit with SPEED=5, tag it: git tag v1.1-medium',
@@ -321,7 +321,7 @@ export const MISSIONS: Mission[] = [
     category: 'default',
     difficulty: 'Intermediate',
     badge: 'DETACHED',
-    whatYouLearn: 'Working in detached HEAD state',
+    whatYouLearn: 'WHAT: Detached HEAD means you\'re viewing a specific commit, not a branch. WHY: Safely explore old code without changing branches. Make experimental changes without affecting branches.',
     steps: [
       'Make 3 commits changing PLAYER_CHAR: first "A", then "B", then "C"',
       'Get commit hash: git log --oneline (copy the "A" commit hash)',
@@ -329,26 +329,6 @@ export const MISSIONS: Mission[] = [
       'Check constants.py - it shows "A"! Make a test change',
       'Save it: git branch test-branch, then git checkout main',
       'Your main still has "C", test-branch has your experiment!'
-    ],
-    claimedBy: null,
-    claimedAt: null,
-    completedBy: []
-  },
-  {
-    id: '36',
-    mission_id: 'default-16',
-    title: 'Sync With Team',
-    description: 'Download updates from your team without losing your work',
-    category: 'default',
-    difficulty: 'Intermediate',
-    badge: 'FETCH',
-    whatYouLearn: 'Fetch vs pull strategies',
-    steps: [
-      'Download updates without applying: git fetch',
-      'See what\'s new: git log origin/main..main',
-      'Decide: merge or rebase the updates?',
-      'Quick sync: git pull (downloads + merges)',
-      'Clean sync: git pull --rebase (downloads + rebases)'
     ],
     claimedBy: null,
     claimedAt: null,
