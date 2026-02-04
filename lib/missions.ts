@@ -36,10 +36,12 @@ export const MISSIONS: Mission[] = [
     badge: 'SETUP',
     whatYouLearn: 'Clone a repo, run Python code',
     steps: [
-      'Clone the repository',
-      'Create and activate virtual environment',
-      'Install dependencies with pip',
-      'Run the game and play for 30 seconds'
+      'Clone: git clone https://github.com/diegoperezgandarillas/Neon-Runner-Artifact-Heist.git',
+      'Navigate: cd Neon-Runner-Artifact-Heist',
+      'Create virtualenv: python3 -m venv venv',
+      'Activate: source venv/bin/activate (Mac/Linux) or venv\\Scripts\\activate (Windows)',
+      'Install: pip install -r requirements.txt',
+      'Run: python main.py and play for 30 seconds!'
     ],
     claimedBy: null,
     claimedAt: null,
@@ -55,10 +57,12 @@ export const MISSIONS: Mission[] = [
     badge: 'BRANCH',
     whatYouLearn: 'Git branching workflow',
     steps: [
-      'Create a new branch with your name',
-      'Make any small change',
-      'Commit the change',
-      'Push your branch to remote'
+      'Create branch: git checkout -b <your-name>',
+      'Or: git branch <your-name> then git checkout <your-name>',
+      'Make any small change to README.md',
+      'Stage: git add README.md',
+      'Commit: git commit -m "Added my name"',
+      'Push: git push -u origin <your-name>'
     ],
     claimedBy: null,
     claimedAt: null,
@@ -74,10 +78,11 @@ export const MISSIONS: Mission[] = [
     badge: 'INFO',
     whatYouLearn: 'Using git status to track changes',
     steps: [
-      'Run git status in your terminal',
-      'Make a small change to any file',
-      'Run git status again and observe the difference',
-      'Use git diff to see what changed'
+      'Check status: git status',
+      'Make a small change to README.md',
+      'Check again: git status (see modified file)',
+      'See exact changes: git diff',
+      'See changes for specific file: git diff README.md'
     ],
     claimedBy: null,
     claimedAt: null,
@@ -93,10 +98,12 @@ export const MISSIONS: Mission[] = [
     badge: 'STAGE',
     whatYouLearn: 'Git staging area workflow',
     steps: [
-      'Create or modify a file',
-      'Use git add to stage the file',
-      'Check status to see staged changes',
-      'Commit with a descriptive message using git commit -m'
+      'Modify a file or create new one',
+      'Stage it: git add <filename>',
+      'Stage all changes: git add .',
+      'Check staged: git status',
+      'Commit: git commit -m "Your descriptive message"',
+      'See commit: git log --oneline'
     ],
     claimedBy: null,
     claimedAt: null,
@@ -112,10 +119,33 @@ export const MISSIONS: Mission[] = [
     badge: 'HIST',
     whatYouLearn: 'Using git log for files',
     steps: [
-      'Use git log -- <filename> to see file history',
-      'Try git log -p -- <filename> to see actual changes',
-      'Use git blame <filename> to see who changed what',
-      'Explore different log formatting options'
+      'File history: git log -- main.py',
+      'With changes: git log -p -- main.py',
+      'Who changed what: git blame main.py',
+      'Pretty format: git log --oneline --graph --all',
+      'Search history: git log -S"search_term"'
+    ],
+    claimedBy: null,
+    claimedAt: null,
+    completedBy: []
+  },
+  {
+    id: '37',
+    mission_id: 'default-6',
+    title: 'Start From Scratch',
+    description: 'Initialize a new repository and connect to remote',
+    category: 'default',
+    difficulty: 'Beginner',
+    badge: 'INIT',
+    whatYouLearn: 'Repository initialization and remotes',
+    steps: [
+      'Create folder: mkdir my-test-repo && cd my-test-repo',
+      'Initialize: git init',
+      'Create file: echo \"# Test\" > README.md',
+      'Stage: git add README.md',
+      'First commit: git commit -m \"Initial commit\"',
+      'Add remote: git remote add origin <url>',
+      'View remotes: git remote -v'
     ],
     claimedBy: null,
     claimedAt: null,
@@ -123,7 +153,7 @@ export const MISSIONS: Mission[] = [
   },
   {
     id: '27',
-    mission_id: 'default-6',
+    mission_id: 'default-7',
     title: 'Experiment Safely',
     description: 'Create a feature branch to try changing the game without breaking main',
     category: 'default',
@@ -143,7 +173,7 @@ export const MISSIONS: Mission[] = [
   },
   {
     id: '28',
-    mission_id: 'default-7',
+    mission_id: 'default-8',
     title: 'Keep History Clean',
     description: 'Use rebase to organize your game modifications before sharing',
     category: 'default',
@@ -164,7 +194,7 @@ export const MISSIONS: Mission[] = [
   },
   {
     id: '29',
-    mission_id: 'default-8',
+    mission_id: 'default-9',
     title: 'Time Travel Through Code',
     description: 'Create versions then jump between them using HEAD~',
     category: 'default',
@@ -185,7 +215,7 @@ export const MISSIONS: Mission[] = [
   },
   {
     id: '30',
-    mission_id: 'default-9',
+    mission_id: 'default-10',
     title: 'Borrow Good Ideas',
     description: 'Copy a specific commit from one branch to another',
     category: 'default',
@@ -205,7 +235,7 @@ export const MISSIONS: Mission[] = [
   },
   {
     id: '31',
-    mission_id: 'default-10',
+    mission_id: 'default-11',
     title: 'Polish Your Changes',
     description: 'Clean up messy commits before sharing',
     category: 'default',
@@ -225,7 +255,7 @@ export const MISSIONS: Mission[] = [
   },
   {
     id: '32',
-    mission_id: 'default-11',
+    mission_id: 'default-12',
     title: 'Undo Experiments',
     description: 'Create then undo commits using branch forcing',
     category: 'default',
@@ -245,7 +275,7 @@ export const MISSIONS: Mission[] = [
   },
   {
     id: '33',
-    mission_id: 'default-12',
+    mission_id: 'default-13',
     title: 'Choose Your Undo',
     description: 'Learn three levels of undo: soft, mixed, hard',
     category: 'default',
@@ -265,7 +295,7 @@ export const MISSIONS: Mission[] = [
   },
   {
     id: '34',
-    mission_id: 'default-13',
+    mission_id: 'default-14',
     title: 'Mark Milestones',
     description: 'Create game versions and tag them for easy access',
     category: 'default',
@@ -285,7 +315,7 @@ export const MISSIONS: Mission[] = [
   },
   {
     id: '35',
-    mission_id: 'default-14',
+    mission_id: 'default-15',
     title: 'Peek at History',
     description: 'Create history then safely explore it in detached HEAD',
     category: 'default',
@@ -306,7 +336,7 @@ export const MISSIONS: Mission[] = [
   },
   {
     id: '36',
-    mission_id: 'default-15',
+    mission_id: 'default-16',
     title: 'Sync With Team',
     description: 'Download updates from your team without losing your work',
     category: 'default',

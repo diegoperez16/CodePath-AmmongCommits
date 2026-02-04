@@ -73,7 +73,7 @@ export default function MissionBoard({
               <span>|</span>
               <span>Completed: <strong>{userCompletedMissions.length}</strong></span>
             </div>
-            <div style={{ marginTop: '10px' }}>
+            <div style={{ marginTop: '10px', display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
               <a 
                 href="https://github.com/diegoperezgandarillas/Neon-Runner-Artifact-Heist" 
                 target="_blank" 
@@ -89,6 +89,23 @@ export default function MissionBoard({
               >
                 <span>📁</span>
                 <span>Game Repository</span>
+                <span style={{ fontSize: '12px' }}>↗</span>
+              </a>
+              <a 
+                href="https://education.github.com/git-cheat-sheet-education.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ 
+                  color: '#5dd9c1', 
+                  textDecoration: 'none',
+                  fontSize: '14px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px'
+                }}
+              >
+                <span>📋</span>
+                <span>Git Cheat Sheet</span>
                 <span style={{ fontSize: '12px' }}>↗</span>
               </a>
             </div>
