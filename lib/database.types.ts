@@ -32,8 +32,13 @@ export interface Database {
           mission_id: string
           title: string
           description: string
-          category: 'anytime' | 'detective' | 'unlocked'
+          category: 'default' | 'detective' | 'unlocked'
           difficulty: string
+          badge?: string
+          what_you_learn?: string
+          steps?: string[]
+          evidence?: string
+          story_part?: number
           claimed_by: string | null
           claimed_at: string | null
           completed_by: string[]
@@ -44,8 +49,13 @@ export interface Database {
           mission_id: string
           title: string
           description: string
-          category: 'anytime' | 'detective' | 'unlocked'
+          category: 'default' | 'detective' | 'unlocked'
           difficulty: string
+          badge?: string
+          what_you_learn?: string
+          steps?: string[]
+          evidence?: string
+          story_part?: number
           claimed_by?: string | null
           claimed_at?: string | null
           completed_by?: string[]
@@ -56,8 +66,13 @@ export interface Database {
           mission_id?: string
           title?: string
           description?: string
-          category?: 'anytime' | 'detective' | 'unlocked'
+          category?: 'default' | 'detective' | 'unlocked'
           difficulty?: string
+          badge?: string
+          what_you_learn?: string
+          steps?: string[]
+          evidence?: string
+          story_part?: number
           claimed_by?: string | null
           claimed_at?: string | null
           completed_by?: string[]

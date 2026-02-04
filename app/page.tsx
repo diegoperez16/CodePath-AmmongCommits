@@ -37,7 +37,7 @@ export default function Home() {
         const dbMissionIds = new Set(data.map((m: any) => m.mission_id));
         
         const mappedMissions = MISSIONS.map((mission) => {
-          const dbMission = data.find((m: any) => m.mission_id === mission.mission_id);
+          const dbMission: any = data.find((m: any) => m.mission_id === mission.mission_id);
           if (dbMission) {
             return {
               ...mission,
